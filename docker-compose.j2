@@ -1,0 +1,10 @@
+version: "3.2"
+services:
+  pocketbase:
+    build: ./docker
+    container_name: {{ containername }}
+    ports:
+      - {{ port }}:8090
+    volumes:
+      - ./data:/pocketbase/pb_data
+    restart: unless-stopped
